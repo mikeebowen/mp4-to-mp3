@@ -1,3 +1,5 @@
+import { ipcRenderer, ipcMain } from 'electron';
+
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 window.addEventListener("DOMContentLoaded", () => {
@@ -11,4 +13,13 @@ window.addEventListener("DOMContentLoaded", () => {
   for (const type of ["chrome", "node", "electron"]) {
     replaceText(`${type}-version`, process.versions[type as keyof NodeJS.ProcessVersions]);
   }
+
+});
+
+process.once('loaded', () => {
+  window.addEventListener('message', evt => {
+    if (evt.data.type === 'select-dirs') {
+      ipcRenderer.send('select-dirs')
+    }
+  });
 });

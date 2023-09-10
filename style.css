@@ -1,0 +1,36 @@
+html {
+  background: url(background.svg);
+  background-size: cover;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.row#list {
+  flex-direction: column;
+  background-color: cornsilk;
+}
+
+#icn {
+  font-size: 60px;
+}
+
+.icn-spinner {
+  animation: spin-animation 0.5s infinite;
+  display: inline-block;
+}
+
+.js-spin.icn-spinner {
+  visibility: hidden;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

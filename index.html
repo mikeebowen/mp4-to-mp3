@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>.
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./dist/renderer.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Convert mp4 to mp3</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="row">
+    <h1>Convert mp4 to mp3</h1>
+  </div>
+  <div class="row">
+    <button id="dirs">Select MP4s</button>
+  </div>
+  <div class="row">
+    <span class="js-spin icn-spinner" id="icn">⟳</span>
+  </div>
+  <div class="row" id="list">
+  </div>
+  <!-- You can also require other files to run in this process -->
+  <script src="./dist/renderer.js"></script>
+</body>
+
 </html>

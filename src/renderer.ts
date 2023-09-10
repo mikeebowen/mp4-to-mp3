@@ -4,3 +4,8 @@
 // nodeIntegration is set to true in webPreferences.
 // Use preload.js to selectively enable features
 // needed in the renderer process.
+document.getElementById('dirs').addEventListener('click', (e) => {
+  window.postMessage({
+    type: 'select-dirs',
+  });
+});
